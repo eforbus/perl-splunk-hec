@@ -7,7 +7,7 @@ use Splunk::HEC::Request;
 use Splunk::HEC::Response;
 use strict;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 has url   => sub { return $ENV{SPLUNK_HEC_URL}   || 'http://localhost:8088/services/collector'; };
 has token => sub { return $ENV{SPLUNK_HEC_TOKEN} || '' };
