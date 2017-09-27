@@ -24,6 +24,7 @@ nytprof.out
 /pm_to_blib
 *.o
 *.bs
+*.tar.gz
 # Mac Finder generated:
 .DS_Store
 

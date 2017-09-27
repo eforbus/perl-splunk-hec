@@ -12,7 +12,7 @@
 #   MakeMaker Parameters:
 
 #     ABSTRACT => q[Splunk HTTP Event Collector (HEC) Client]
-#     AUTHOR => [q[Ezra Forbus <sri@cpan.org>]]
+#     AUTHOR => [q[Ezra Forbus <eforbus@cpan.org>]]
 #     BUILD_REQUIRES => {  }
 #     CONFIGURE_REQUIRES => {  }
 #     LICENSE => q[artistic_2]
@@ -60,11 +60,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = Splunk::HEC
 NAME_SYM = Splunk_HEC
-VERSION = 1.00
+VERSION = 1.01
 VERSION_MACRO = VERSION
-VERSION_SYM = 1_00
+VERSION_SYM = 1_01
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 1.00
+XS_VERSION = 1.01
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -274,7 +274,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = Splunk-HEC
-DISTVNAME = Splunk-HEC-1.00
+DISTVNAME = Splunk-HEC-1.01
 
 
 # --- MakeMaker macro section:
@@ -493,7 +493,7 @@ realclean_subdirs :
 # Delete temporary files (via clean) and also delete dist files
 realclean purge ::  clean realclean_subdirs
 	- $(RM_F) \
-	  $(FIRST_MAKEFILE) $(MAKEFILE_OLD) 
+	  $(MAKEFILE_OLD) $(FIRST_MAKEFILE) 
 	- $(RM_RF) \
 	  $(DISTVNAME) 
 
@@ -504,7 +504,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '---' > META_new.yml
 	$(NOECHO) $(ECHO) 'abstract: '\''Splunk HTTP Event Collector (HEC) Client'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
-	$(NOECHO) $(ECHO) '  - '\''Ezra Forbus <sri@cpan.org>'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) '  - '\''Ezra Forbus <eforbus@cpan.org>'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'build_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml
@@ -533,13 +533,13 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '  homepage: https://github.com/eforbus/perl-splunk-hec' >> META_new.yml
 	$(NOECHO) $(ECHO) '  license: http://www.opensource.org/licenses/artistic-license-2.0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  repository: https://github.com/eforbus/perl-splunk-hec.git' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version: '\''1.00'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version: '\''1.01'\''' >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
 	$(NOECHO) $(ECHO) '{' > META_new.json
 	$(NOECHO) $(ECHO) '   "abstract" : "Splunk HTTP Event Collector (HEC) Client",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "author" : [' >> META_new.json
-	$(NOECHO) $(ECHO) '      "Ezra Forbus <sri@cpan.org>"' >> META_new.json
+	$(NOECHO) $(ECHO) '      "Ezra Forbus <eforbus@cpan.org>"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
 	$(NOECHO) $(ECHO) '   "dynamic_config" : 0,' >> META_new.json
 	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 7.04, CPAN::Meta::Converter version 2.143240",' >> META_new.json
@@ -595,7 +595,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '         "web" : "https://github.com/eforbus/perl-splunk-hec.git"' >> META_new.json
 	$(NOECHO) $(ECHO) '      }' >> META_new.json
 	$(NOECHO) $(ECHO) '   },' >> META_new.json
-	$(NOECHO) $(ECHO) '   "version" : "1.00"' >> META_new.json
+	$(NOECHO) $(ECHO) '   "version" : "1.01"' >> META_new.json
 	$(NOECHO) $(ECHO) '}' >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
 
@@ -898,7 +898,7 @@ testdb_static :: testdb_dynamic
 ppd :
 	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="$(VERSION)">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>Splunk HTTP Event Collector (HEC) Client</ABSTRACT>' >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) '    <AUTHOR>Ezra Forbus &lt;sri@cpan.org&gt;</AUTHOR>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR>Ezra Forbus &lt;eforbus@cpan.org&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="HTTP::Tiny" VERSION="0.070" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="JSON::XS" VERSION="2.27103" />' >> $(DISTNAME).ppd

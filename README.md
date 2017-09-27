@@ -14,8 +14,7 @@ _NOTE: This library is not maintained or affiliated with Splunk._
 ## Features
 
   * `Splunk::HEC` provides a simple means to send HEC events to Splunk
-  * Events can be sent one at a time or batched  
-  * Provides a simple way to send events via the `splunk_hec_send` method
+  * Events can be sent one at a time or batched
 
 ## Installation
 
@@ -33,12 +32,13 @@ _NOTE: This library is not maintained or affiliated with Splunk._
 use Splunk::HEC; 
 
 my $hec = Splunk::HEC->new(
-  url  => 'https://mysplunkserver.example.com:8088/services/collector/event',
+  url  => 'https://splk.example.com:8088/services/collector/event',
   token => '12345678-1234-1234-1234-1234567890AB'
 );
 
 my $res = $hec->send(event => {
-  message => 'Something happened', severity => 'INFO'
+  message  => 'Something happened', 
+  severity => 'INFO'
 });
 
 if ($res->is_success) { say $res->content }

@@ -9,7 +9,7 @@ WriteMakefile(
   NAME      => 'Splunk::HEC',
   VERSION_FROM => 'lib/Splunk/HEC.pm',
   ABSTRACT     => 'Splunk HTTP Event Collector (HEC) Client',
-  AUTHOR       => 'Ezra Forbus <sri@cpan.org>',
+  AUTHOR       => 'Ezra Forbus <eforbus@cpan.org>',
   LICENSE      => 'artistic_2',
   META_MERGE   => {
     dynamic_config => 0,
